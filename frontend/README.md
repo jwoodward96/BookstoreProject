@@ -1,8 +1,33 @@
-# React + TypeScript + Vite
+# Bookstore Frontend (Mission 12)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a bookstore UI with filtering, pagination, cart persistence, and donation flow.
 
-Currently, two official plugins are available:
+## Setup
+
+1. npm install
+2. npm run dev
+3. Open http://localhost:5173
+
+## Scripts
+
+- npm run dev
+- npm run build
+- npm run preview
+
+## Features implemented
+
+- Category filtering + sessionStorage
+- Pagination (page / page size) + progress bar
+- Cart context and session persistence
+- Cart page with quantity controls + clearing
+- Donate page and add donation item to cart
+- React Router navigation and App layout
+- Bootstrap responsive design
+
+## Notes
+
+- Ensure backend API is running at https://localhost:7022/api/book
+- Book model is defined in src/types/book.ts
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
