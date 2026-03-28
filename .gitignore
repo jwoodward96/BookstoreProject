@@ -1,0 +1,16 @@
+# .NET build artifacts - should never be committed
+backend/bin/
+backend/obj/
+backend/.vs/
+backend/**/*.user
+
+# SQLite database binary
+# (comment out the line below if your grader needs to see the seeded data)
+# backend/**/*.sqlite
+
+# Python virtual environment
+.venv/
+
+# OS-generated files
+.DS_Store
+Thumbs.db

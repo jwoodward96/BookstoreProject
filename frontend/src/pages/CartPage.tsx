@@ -2,15 +2,19 @@ import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
+// Displays all items currently in the shopping cart.
+// Allows the user to adjust quantities, remove items, and see the subtotal.
 export default function CartPage() {
   const { cartItems, removeFromCart, clearCart, updateItemQuantity } = useCart();
   const navigate = useNavigate();
 
+  // Calculate the cart subtotal by summing (price × quantity) for each item.
   const subTotal = useMemo(
     () => cartItems.reduce((total, item) => total + item.book.price * item.quantity, 0),
     [cartItems]
   );
 
+  // Show an empty-cart message with a link back to the book list.
   if (!cartItems.length) {
     return (
       <div className="container mt-5">

@@ -3,9 +3,13 @@ import ProjectsPage from "./pages/ProjectsPage";
 import CartPage from "./pages/CartPage";
 import DonatePage from "./pages/DonatePage";
 
+// Root component of the application.
+// Sets up client-side routing (React Router) and the Bootstrap navigation bar.
 function App() {
   return (
+    // BrowserRouter enables URL-based navigation without full page reloads.
     <BrowserRouter>
+      {/* Top navigation bar with links to the Books list and Cart pages */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div className="container-fluid">
           <NavLink to="/" className="navbar-brand">

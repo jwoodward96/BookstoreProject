@@ -1,3 +1,4 @@
+// Displays a full-width hero banner at the top of the book list page.
 export default function WelcomeBand() {
   return (
     <div className="row mb-3">

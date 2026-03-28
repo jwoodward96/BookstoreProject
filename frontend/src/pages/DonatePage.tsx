@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { Book } from "../types/book";
 import { useCart } from "../context/CartContext";
 
+// Page that lets a user choose a donation amount for a specific book.
+// The book ID comes from the URL parameter (:id), fetched from the API.
 export default function DonatePage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ export default function DonatePage() {
   const [book, setBook] = useState<Book | null>(null);
   const [donationAmount, setDonationAmount] = useState(5);
 
+  // Fetch the book details from the API when the component mounts or the ID changes.
   useEffect(() => {
     if (id) {
       fetch(`https://localhost:7022/api/book/${id}`)
@@ -20,6 +23,7 @@ export default function DonatePage() {
     }
   }, [id]);
 
+  // Show a loading indicator while the book data is being fetched.
   if (!book) {
     return (
       <div className="container mt-5">
@@ -28,6 +32,7 @@ export default function DonatePage() {
     );
   }
 
+  // Add the book to the cart with the selected donation amount as its price.
   const handleDonate = () => {
     const donationBook: Book = {
       ...book,

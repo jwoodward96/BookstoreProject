@@ -2,8 +2,10 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { Book } from "../types/book";
 import type { CartItem } from "../types/cartItem";
 
+// Session storage key used to persist cart data across page refreshes.
 const CART_KEY = "bookstoreCart";
 
+// Shape of the value provided by CartContext to all consumers.
 export interface CartContextValue {
   cart: Record<number, CartItem>;
   cartItems: CartItem[];
@@ -17,7 +19,10 @@ export interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
 
+// CartProvider wraps the application and makes cart state available to any child component.
+// Cart contents are persisted to sessionStorage so they survive page refreshes.
 export function CartProvider({ children }: { children: React.ReactNode }) {
+  // Initialize cart from sessionStorage on first render.
   const [cart, setCart] = useState<Record<number, CartItem>>(() => {
     if (typeof window === "undefined") return {};
     try {
@@ -29,10 +34,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   });
 
+  // Keep sessionStorage in sync with cart state whenever it changes.
   useEffect(() => {
     sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
   }, [cart]);
 
+  // Derived values computed from the cart state.
   const cartItems = useMemo(() => Object.values(cart), [cart]);
   const cartQuantity = useMemo(
     () => cartItems.reduce((sum, item) => sum + item.quantity, 0),
