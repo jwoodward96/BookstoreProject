@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import ProjectsPage from "./pages/ProjectsPage";
 import CartPage from "./pages/CartPage";
 import DonatePage from "./pages/DonatePage";
+import AdminBooksPage from "./pages/AdminBooksPage";
 
 // Root component of the application.
 // Sets up client-side routing (React Router) and the Bootstrap navigation bar.
@@ -30,6 +31,11 @@ function App() {
                   Cart
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/adminbooks" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+                  Admin Books
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -39,6 +45,7 @@ function App() {
         <Route path="/" element={<ProjectsPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/donate/:id" element={<DonatePage />} />
+        <Route path="/adminbooks" element={<AdminBooksPage />} />
         <Route path="*" element={<div className="container mt-5"><h3>Page not found</h3></div>} />
       </Routes>
     </BrowserRouter>

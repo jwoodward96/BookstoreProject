@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Book } from "../types/book";
 import { useCart } from "../context/CartContext";
+import { apiUrl } from "../api";
 
 // Page that lets a user choose a donation amount for a specific book.
 // The book ID comes from the URL parameter (:id), fetched from the API.
@@ -16,7 +17,7 @@ export default function DonatePage() {
   // Fetch the book details from the API when the component mounts or the ID changes.
   useEffect(() => {
     if (id) {
-      fetch(`https://localhost:7022/api/book/${id}`)
+      fetch(apiUrl(`/api/book/${id}`))
         .then((res) => (res.ok ? res.json() : Promise.reject("Not found")))
         .then((data: Book) => setBook(data))
         .catch((error) => console.error("Cannot load book for donate", error));

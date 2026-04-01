@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { apiUrl } from "../api";
 
 // NOTE: Bootstrap classes used here include: row/col grid layout, card, badge, progress, btn, form-select
 // Extra Bootstrap features not covered in class: progress bar (<div className="progress">) and sticky sidebar (position-sticky with utility classes).
@@ -46,7 +47,7 @@ function BookList() {
       }
     }
 
-    fetch("https://localhost:7022/api/book")
+    fetch(apiUrl("/api/book"))
       .then((res) => res.json())
       .then((data: Book[]) => {
         setBooks(data);

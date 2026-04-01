@@ -6,8 +6,9 @@ import CartSummary from "../components/CartSummary";
 import BookCard from "../components/BookCard";
 import WelcomeBand from "../components/WelcomeBand";
 import type { Book } from "../types/book";
+import { apiUrl } from "../api";
 
-const API_URL = "https://localhost:7022/api/book";
+const API_URL = apiUrl("/api/book");
 const PAGE_KEY = "bookstorePage";
 const CATEGORY_KEY = "bookstoreCategory";
 
@@ -64,7 +65,7 @@ export default function ProjectsPage() {
   const currentBooks = filteredBooks.slice((normalizedPage - 1) * pageSize, normalizedPage * pageSize);
 
   const handleDonate = (book: Book) => {
-    navigate(`/donate/${book.bookID}/${encodeURIComponent(book.title)}`, { state: { book } });
+    navigate(`/donate/${book.bookID}`, { state: { book } });
   };
 
   const progressPercent = filteredBooks.length ? (currentBooks.length / filteredBooks.length) * 100 : 0;
