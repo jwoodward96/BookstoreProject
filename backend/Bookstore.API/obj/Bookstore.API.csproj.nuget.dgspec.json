@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jailb\\source\\repos\\Bookstore.API\\Bookstore.API\\Bookstore.API.csproj": {}
+    "C:\\Users\\jailb\\OneDrive\\Desktop\\BookstoreProject\\backend\\Bookstore.API\\Bookstore.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jailb\\source\\repos\\Bookstore.API\\Bookstore.API\\Bookstore.API.csproj": {
+    "C:\\Users\\jailb\\OneDrive\\Desktop\\BookstoreProject\\backend\\Bookstore.API\\Bookstore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jailb\\source\\repos\\Bookstore.API\\Bookstore.API\\Bookstore.API.csproj",
+        "projectUniqueName": "C:\\Users\\jailb\\OneDrive\\Desktop\\BookstoreProject\\backend\\Bookstore.API\\Bookstore.API.csproj",
         "projectName": "Bookstore.API",
-        "projectPath": "C:\\Users\\jailb\\source\\repos\\Bookstore.API\\Bookstore.API\\Bookstore.API.csproj",
+        "projectPath": "C:\\Users\\jailb\\OneDrive\\Desktop\\BookstoreProject\\backend\\Bookstore.API\\Bookstore.API.csproj",
         "packagesPath": "C:\\Users\\jailb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jailb\\source\\repos\\Bookstore.API\\Bookstore.API\\obj\\",
+        "outputPath": "C:\\Users\\jailb\\OneDrive\\Desktop\\BookstoreProject\\backend\\Bookstore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
